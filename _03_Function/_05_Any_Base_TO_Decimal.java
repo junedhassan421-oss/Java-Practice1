@@ -1,0 +1,28 @@
+package _03_Function;
+import java.util.Scanner;
+public class _05_Any_Base_TO_Decimal {
+    public static void main(String[] args) {
+
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter number : ");
+            int n = sc.nextInt();
+            System.out.print("Enter base : ");
+            int b = sc.nextInt();
+
+            int dn = getvalueinbase(n,b);
+            System.out.print(dn);
+
+    }
+    public static int getvalueinbase(int n, int b){
+        int rv = 0;
+        int p = 1; // 10^0
+        while (n>0){
+            int dig = n%10;
+            n = n/10;
+
+            rv += dig*p;
+            p = p*b;
+        }
+        return rv;
+    }
+}
